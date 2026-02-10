@@ -20,7 +20,7 @@ public:
     static double get_random_value(const std::string& time);
     static double get_temp(const int &time);
     static double get_humidity(double old_data, double new_data);
-    void get_pressure();
+    static double  get_pressure();
 };
 
 class weather_station {
