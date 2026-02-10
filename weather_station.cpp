@@ -1,5 +1,6 @@
 #include "weather_reading.hpp"
 
+
 void weather_station::update(int time) {
     double old_temp = weather_reading::temperature;
     double new_temp = weather_reading::get_temp(time);
