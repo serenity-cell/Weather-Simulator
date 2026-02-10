@@ -1,6 +1,6 @@
-#include "weather.hpp"
+#include "weather_reading.hpp"
 double weather_reading::temperature = 23.3;
-double weather_reading::humidity = 64.7;
+double weather_reading::humidity = 74.7;
 double weather_reading::pressure = weather_reading::get_random_value("base_pressure");
 
 double weather_reading::get_random_value (const std::string& type) {
