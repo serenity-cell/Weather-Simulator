@@ -26,7 +26,7 @@ public:
 class weather_station {
 
     public:
-    void update();
+    static void update(int time);
     void get_reading();
 
 };
