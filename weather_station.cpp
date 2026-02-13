@@ -1,5 +1,5 @@
-#include "weather_reading.hpp"
-
+#include "weather_features.hpp"
+#include <iostream>
 
 void weather_station::update(int time) {
     double old_temp = weather_reading::temperature;
