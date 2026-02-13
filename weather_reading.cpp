@@ -1,4 +1,7 @@
-#include "weather_reading.hpp"
+#include "weather_features.hpp"
+#include <random>
+#include <algorithm>
+
 double weather_reading::temperature = 23.3;
 double weather_reading::humidity = 74.7;
 double weather_reading::pressure = weather_reading::get_random_value("base_pressure");
@@ -33,6 +36,10 @@ double weather_reading::get_random_value (const std::string& type) {
         minimum = 1013;
         maximum = 1017;
     }
+    else {
+        // Unknown type: return 0 rather than relying on a (0,0) distribution.
+        return 0.0;
+    }
 
     std::uniform_real_distribution<double> dist(minimum, maximum);  //(min, max)
     //Mersenne Twister: Good quality random number generator
@@ -44,19 +51,21 @@ double weather_reading::get_random_value (const std::string& type) {
 
 }
 
-double weather_reading::get_temp(const int& time) {
+double weather_reading::get_temp(int time) {
     //daytime temperature changes
-    if (time < 9) {
+    if (time <= 9) {
         temperature= temperature + get_random_value("day");
     }
     //nighttime temperature changes
-    else if  (time >= 10) {
+    else {
         temperature= temperature - get_random_value("night");
     }
     return temperature;
 
 };
 
+
+//gets humidity data based on old and new temperature fluctuation data
 double weather_reading::get_humidity(double old_data, double new_data) {
     double delta = new_data - old_data;
     if (delta < 0) {
@@ -65,11 +74,13 @@ double weather_reading::get_humidity(double old_data, double new_data) {
     else if (delta > 0) {
        humidity = humidity - get_random_value("humidity") - 0.3;
     }
-    humidity = round(humidity);
+    humidity = std::round(humidity);
+    humidity = std::clamp(humidity, 0.0, 100.0);
 
     return humidity;
 
 }
+
 
 double weather_reading::get_pressure() {
     if (pressure >=  1015) {
@@ -81,5 +92,3 @@ double weather_reading::get_pressure() {
 
     return pressure;
 }
-
-
