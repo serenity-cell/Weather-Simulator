@@ -51,6 +51,8 @@ double weather_reading::get_random_value (const std::string& type) {
 
 }
 
+
+//___GET READINGS SECTIONS___
 double weather_reading::get_temp(int time) {
     //daytime temperature changes
     if (time <= 9) {
@@ -81,7 +83,7 @@ double weather_reading::get_humidity(double old_data, double new_data) {
 
 }
 
-
+//gets pressure databased on weather its over or under the baseline 
 double weather_reading::get_pressure() {
     if (pressure >=  1015) {
         pressure = pressure - get_random_value("pressure");
