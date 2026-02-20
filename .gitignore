@@ -1,3 +1,9 @@
+# compiled files 
+.weather_simulator
+
+#text files
+*.csv
+
 # Prerequisites
 *.ds_store
 *.vscode
