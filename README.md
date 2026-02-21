@@ -11,5 +11,5 @@ essentially simulates the temperature, humidity, and pressure of a full day (24 
 i learned about keeping classes in seperate files, using csv files and how they are formatted. I also learned a bit more on how to use vectors by adding doubles in the vector together.
 
 ## what would I change
-If I had to do anything, it would be to restructure the input received by the get_random_value function. In addition,  create more thorough names/comments and tidy up (make the code more understandable). Since I don't fully understand constructors, destructors, and fstream, I think it would be in my best interest to study at least a little bit more about each of those topics.
+If I had to do anything, it would be to restructure the input received by the get_random_value function. In addition,  create more thorough names/comments and tidy up (make the code more understandable). Since I don't fully understand constructors, destructors, and fstream, I think it would be in my best interest to study at least a little bit more about each of those topics. A greatly needed improvement would have to be the actual simulation; it does great for something low level but I feel like there could be a lot more to be expanded upon and improved in it.
 
