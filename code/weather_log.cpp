@@ -1,7 +1,13 @@
 #include "weather_features.hpp"
+#include <fstream>
+#include <iostream>
 
 weather_log::weather_log() {
-    save_file.open("weather.csv", std::ios::app);
+    std::string filename = "weather.csv";
+    save_file.open(filename, std::ios::app);
+    if (!save_file.is_open()) { 
+        std::cout << "Error trying to open the file:" << filename << "\n" ;
+    }
 }
 
 weather_log::~weather_log() {
@@ -11,9 +17,6 @@ weather_log::~weather_log() {
 }
 
 void weather_log::record(double temp, double humidity, double pressure) {
-    weather_vector.push_back(temp);
-    weather_vector.push_back(humidity);
-    weather_vector.push_back(pressure);
     save_file << temp << "," << humidity << "," << pressure << "\n";
     save_file.flush();
 }
