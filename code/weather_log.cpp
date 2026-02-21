@@ -85,6 +85,7 @@ void weather_log::calculate_daily_average() {
     }
 
     std::cout << "daily average - Temperature: " << avg_temp_ << ", Humidity: " << avg_humidity_ << ", Pressure: " << avg_pressure_ << "\n";
+    save_file.clear();
 }
 
 
