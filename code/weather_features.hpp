@@ -38,8 +38,8 @@ public:
     weather_log();
     ~weather_log();
     void record(double temp, double humidity, double pressure);
-    static void calculate_daily_average();
-    static void export_csv();
+    void calculate_daily_average();
+    void export_csv();
 };
 
 
