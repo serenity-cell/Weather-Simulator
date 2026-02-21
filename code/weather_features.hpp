@@ -5,8 +5,6 @@
 #include <ctime>
 #include <cmath>
 
-
-
 #ifndef WEATHER_SIMULATOR_WEATHER_H
 #define WEATHER_SIMULATOR_WEATHER_H
 
