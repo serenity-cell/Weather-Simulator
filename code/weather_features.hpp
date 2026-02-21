@@ -26,8 +26,8 @@ class weather_reading {
 
 class weather_station {
     public:
-    static void update(int time);
-    void get_reading();
+    static void update();
+    static void get_reading(int time);
 
 };
 
