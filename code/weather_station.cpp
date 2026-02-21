@@ -6,7 +6,7 @@ void weather_station::update() {
     // Create weather_log object to record data
     weather_log logger;
     //MAIN CODE\LOOP
-    for (int time = 0; time < 25 ; time++) {
+    for (int time = 1; time < 25 ; time++) {
         std::cout << time << "\n";
         get_reading(time);
         
