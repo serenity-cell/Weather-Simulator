@@ -85,7 +85,12 @@ void weather_log::calculate_daily_average() {
     }
 
     std::cout << "daily average - Temperature: " << avg_temp_ << ", Humidity: " << avg_humidity_ << ", Pressure: " << avg_pressure_ << "\n";
-    save_file.clear();
+    std::ofstream clear_flush_file("weather.csv", std::ios::trunc);
+    if (clear_flush_file.is_open()) {
+        clear_flush_file.close();
+    } else {
+        std::cout << "Error trying to clear the file: weather.csv\n"; 
+    }
 }
 
 
